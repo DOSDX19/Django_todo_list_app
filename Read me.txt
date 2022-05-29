@@ -1,0 +1,10 @@
+>Right click on todo_list file 
+>open the file using visual studio code 
+>open the terminal inside visual studio code 
+>type the follwing command 
+python manage.py runserver 
+>open your browser and type 
+localhost:8000
+and then press enter 
+
+rate the app :)

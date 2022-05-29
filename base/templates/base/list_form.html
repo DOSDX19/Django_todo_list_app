@@ -1,0 +1,13 @@
+{% extends 'base/home.html' %}
+
+{% block title%} the form {% endblock %}
+
+{% block content %}
+    <form action="" method = "POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button >Add </button>
+    </form>    
+
+    <a href="{% url "tasks" %}"> Go to Home </a>
+{% endblock %}

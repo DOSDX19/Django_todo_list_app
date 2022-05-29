@@ -1,0 +1,31 @@
+{% extends 'base/home.html' %}
+
+{% block title %} Task list {% endblock %}
+
+{% block content %}
+
+<hr>
+
+{% if request.user.is_authenticated %}
+    <p> {{request.user}}</p>
+    <a href="{% url "logout" %}" >Logout</a>
+{% else %}
+    <a href="{% url "login" %}" >Login</a>
+{% endif %}
+
+<form >
+    <input type="text" name="search-area" value="{{search}}">
+    <button>Search</button>
+</form>
+<ul>
+    {% for item in list %}
+    
+        <li>
+            <p> {{item.title}}  <a href="{% url "task" item.id %}">view </a>  <a href="{% url "update-task" item.id%}">Update </a> <a href="{% url "delete-task" item.id%}">Delete </a> </p>
+        </li>
+        {% empty %}
+        <h1> There is no items Yet!</h1>
+    {%endfor%}
+    <a href="{% url "add-task" %}">Add </a>
+</ul>
+{% endblock%}

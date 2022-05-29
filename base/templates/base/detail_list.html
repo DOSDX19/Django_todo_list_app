@@ -1,0 +1,13 @@
+{% extends 'base/home.html' %}
+
+
+{% block title%} Deatils {%endblock%}
+
+{%block content%}
+    <h1>{{item.title}}</h1>
+    <p>{{item.complete}}</p>
+    <p>{{item.description}}
+    <p>{{item.created}}</p>
+
+    <a href="{% url "tasks" %}"> Go back </a>
+{% endblock %}
